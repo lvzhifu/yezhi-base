@@ -6,7 +6,7 @@
   "author": "lvzhifuyy@163.com",
   "license": "MIT",
   "dependencies": {
-    "axios": "0.18.0"
+    "axios": "0.19.2"
   },
   "gitHead": "629f2160463488155097da28ce51d9f0ea56fd62"
 }
