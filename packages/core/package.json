@@ -1,12 +1,12 @@
 {
-  "name": "@yeezhi/http",
+  "name": "@yeezhi/core",
   "version": "0.0.4",
-  "description": "请求访问组件",
+  "description": "框架基本类库全引用",
   "main": "./index.js",
   "author": "lvzhifuyy@163.com",
   "license": "MIT",
   "dependencies": {
-    "axios": "0.18.0"
+    "@yeezhi/http": "^0.0.4"
   },
   "gitHead": "629f2160463488155097da28ce51d9f0ea56fd62"
 }
