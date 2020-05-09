@@ -1,2 +1,2 @@
 console.log('adfdf')
-export default 'testInfo'
+export default 'testcore'
