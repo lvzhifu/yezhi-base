@@ -1,0 +1,9 @@
+{
+  "name": "@yeezhi/core",
+  "version": "1.0.0",
+  "description": "Full reference to framework basic class library",
+  "main": "./index.js",
+  "author": "lvzhifuyy@163.com",
+  "license": "MIT",
+  "dependencies": {}
+}

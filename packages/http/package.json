@@ -1,0 +1,11 @@
+{
+  "name": "@yeezhi/http",
+  "version": "1.0.0",
+  "description": "Request access",
+  "main": "./index.js",
+  "author": "lvzhifuyy@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.18.0"
+  }
+}
