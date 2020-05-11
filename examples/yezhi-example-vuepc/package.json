@@ -1,10 +1,10 @@
 {
   "name": "yezhi-example-vuepc",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@yeezhi/core": "^0.0.12"
+    "@yeezhi/core": "^0.0.13"
   },
   "gitHead": "aab70b1f553c4c54a7fbd74469beeca3574bf84a"
 }
