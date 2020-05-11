@@ -36,7 +36,7 @@ initAxios(Http)
 // 初始化信息处理函数
 Http.prototype.init = function(options) {
   const axiosConfig = {...this.options.axiosConfig, ...options.axiosConfig}
-  const requestConfig = {...this.options.axiosConfig, ...options.axiosConfig}
+  const requestConfig = {...this.options.requestConfig, ...options.requestConfig}
   const axiosHook = {...this.options.axiosHook, ...options.axiosHook}
   this.options = {
     axiosConfig,
