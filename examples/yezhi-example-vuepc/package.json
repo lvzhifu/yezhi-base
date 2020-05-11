@@ -1,9 +1,9 @@
 {
   "name": "yezhi-example-vuepc",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@yeezhi/core": "^0.0.7"
+    "@yeezhi/core": "^0.0.8"
   }
 }
