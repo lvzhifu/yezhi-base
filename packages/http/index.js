@@ -1,3 +1,3 @@
-console.log('test')
-console.log('lll')
-export default 'testhttp'
+import http from './src/http'
+
+export default http
