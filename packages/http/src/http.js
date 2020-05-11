@@ -14,9 +14,9 @@ function Http (options = {}) {
 // 插件引入函数
 Http.use = function (plugin) {
   if (typeof plugin.install === 'function') {
-    plugin.install.apply(plugin, this)
+    plugin.install.apply(plugin, [this])
   } else if (typeof plugin === 'function') {
-    plugin.apply(null, this)
+    plugin.apply(null, [this])
   }
   return this
 }

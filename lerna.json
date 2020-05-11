@@ -8,7 +8,7 @@
   "npmClient": "yarn",
   "command": {
     "publish": {
-      "ignoreChanges": [
+      "ignore": [
         "yezhi-example-*",
         "docs-workspace"
       ]
