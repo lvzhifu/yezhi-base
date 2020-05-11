@@ -1,10 +1,10 @@
 {
   "packages": [
-    "packages/*",
+    "docs",
     "examples/*",
-    "docs"
+    "packages/*"
   ],
-  "version": "0.0.6",
+  "version": "0.0.7",
   "npmClient": "yarn",
   "command": {
     "publish": {
