@@ -7,7 +7,7 @@ export default function initAxios(Http) {
     if (this.$fetch) {
       return
     }
-    this.$fetch = createAxios(this.options.axiosConfig, this.options.hook)
+    this.$fetch = createAxios(this.options.axiosConfig, this.options.axiosHook)
   }
   /**
    * get 提交
