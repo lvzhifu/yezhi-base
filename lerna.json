@@ -9,7 +9,7 @@
   "command": {
     "publish": {
       "ignore": [
-        "yezhi-example-*",
+        "yezhi-example-vuepc",
         "docs-workspace"
       ]
     }
