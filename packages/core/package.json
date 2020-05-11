@@ -1,12 +1,12 @@
 {
   "name": "@yeezhi/core",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "框架基本类库全引用",
   "main": "./index.js",
   "author": "lvzhifuyy@163.com",
   "license": "MIT",
   "dependencies": {
-    "@yeezhi/http": "^0.0.10"
+    "@yeezhi/http": "^0.0.11"
   },
   "gitHead": "ab2f30a361182d64b2167c609acc5b006fa626d7"
 }
