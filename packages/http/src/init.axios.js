@@ -18,7 +18,7 @@ export default function initAxios(Http) {
    * @returns Promise
    */
   Http.prototype.get = function (url, params = {}, config = {}) {
-    const opts = {...this.requestConfig, ...config}
+    const opts = {...this.options.requestConfig, ...config}
     opts.params = params
     this.initServer()
     return this.$fetch.get(getUrl(url, opts.isApiHost, opts.baseUrl), opts)
@@ -27,7 +27,7 @@ export default function initAxios(Http) {
    * delete 操作
    */
   Http.prototype.del =  function (url, params = {}, config = {}) {
-    const opts = {...this.requestConfig, ...config}
+    const opts = {...this.options.requestConfig, ...config}
     opts.params = params
     this.initServer()
     return this.$fetch.delete(getUrl(url, opts.isApiHost, opts.baseUrl), opts)
@@ -36,7 +36,7 @@ export default function initAxios(Http) {
    * post 操作
    */
   Http.prototype.post =  function (url, params = {}, config = {}) {
-    const opts = {...this.requestConfig, ...config}
+    const opts = {...this.options.requestConfig, ...config}
     this.initServer()
     return this.$fetch.post(getUrl(url, opts.isApiHost, opts.baseUrl), params, opts)
   }
@@ -44,7 +44,7 @@ export default function initAxios(Http) {
    * patch 提交
    */
   Http.prototype.patch = function (url, params = {}, config = {}) {
-    const opts = {...this.requestConfig, ...config}
+    const opts = {...this.options.requestConfig, ...config}
     this.initServer()
     return this.$fetch.patch(getUrl(url, opts.isApiHost, opts.baseUrl), params, opts)
   }
@@ -52,7 +52,7 @@ export default function initAxios(Http) {
    * put 提交
    */
   Http.prototype.put = function (url, params = {}, config = {}) {
-    const opts = {...this.requestConfig, ...config}
+    const opts = {...this.options.requestConfig, ...config}
     this.initServer()
     return this.$fetch.patch(getUrl(url, opts.isApiHost, opts.baseUrl), params, opts)
   }
@@ -65,7 +65,7 @@ export default function initAxios(Http) {
         'content-type': 'application/x-www-form-urlencoded'
       }
     }
-    const opts = {...this.requestConfig, ...POST_HEADER, ...config}
+    const opts = {...this.options.requestConfig, ...POST_HEADER, ...config}
     const form = new FormData()
     Object.keys(params).forEach(key => {
       form.append(key, params[key])
@@ -80,7 +80,7 @@ export default function initAxios(Http) {
    * 生成下载路径
    */
   Http.prototype.downloadUrl = function (url, params = {}, config = {}) {
-    const opts = {...this.requestConfig, ...config}
+    const opts = {...this.options.requestConfig, ...config}
     const paramsArry = []
     for (const item in params) {
       paramsArry.push(`${item}=${params[item]}`)
@@ -92,7 +92,7 @@ export default function initAxios(Http) {
    * 创建form提交使用的表单
    */
   Http.prototype.createForm = function(url, params = {}, config = {}) {
-    const opts = {...this.requestConfig, ...config}
+    const opts = {...this.options.requestConfig, ...config}
     const form = document.createElement('form')
     form.setAttribute('hidden', 'hidden')
     form.setAttribute('method', 'post')
