@@ -37,7 +37,7 @@ initAxios(Http)
 Http.prototype.init = function(options) {
   const axiosConfig = {...this.options.axiosConfig, ...options.axiosConfig}
   const requestConfig = {...this.options.axiosConfig, ...options.axiosConfig}
-  const axiosHook = {...this.options.axiosConfig, ...options.axiosConfig}
+  const axiosHook = {...this.options.axiosHook, ...options.axiosHook}
   this.options = {
     axiosConfig,
     requestConfig,
