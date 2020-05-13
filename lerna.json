@@ -9,10 +9,11 @@
   "command": {
     "publish": {
       "message": "chore(release): publish %s",
-      "ignoreChanges": [
+      "ignore": [
         "yezhi-example-*",
         "docs-workspace"
       ]
     }
-  }
+  },
+  "lerna": "2.5.1"
 }
