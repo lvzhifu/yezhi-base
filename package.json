@@ -1,18 +1,14 @@
 {
   "name": "yezhi-workspace",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "repository": "git@github.com:lvzhifu/yezhi-base.git",
+  "author": "lvzhifu <lvzhifuyy@163.com>",
+  "license": "MIT",
   "scripts": {
     "test": "node ./test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://58.22.61.222:18001/lvzhifu/test-lerna"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "lerna": "^3.20.2"
+  "dependencies": {
+    "lerna": "^3.21.0"
   }
 }

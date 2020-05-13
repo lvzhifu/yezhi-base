@@ -5,6 +5,10 @@
 ```
 ### 添加引用包示例
 ```
-    ～lerna add module-A packages/package-A
-    ～lerna add package-B --scope=package-A
+    $ lerna add module-A packages/package-A
+    $ lerna add package-B --scope=package-A
+```
+### 项目包初始化
+```
+    $ lerna bootstrap
 ```
