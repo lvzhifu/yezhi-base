@@ -9,8 +9,8 @@
   "command": {
     "publish": {
       "ignoreChanges": [
-        "yezhi-example-vuepc",
-        "docs-workspace"
+        "examples/*",
+        "docs"
       ]
     }
   }
