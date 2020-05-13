@@ -1,6 +1,6 @@
 {
   "name": "@yeezhi/http",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "请求访问组件",
   "main": "./index.js",
   "author": "lvzhifuyy@163.com",
