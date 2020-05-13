@@ -2,7 +2,8 @@
   "packages": [
     "docs",
     "examples/*",
-    "packages/*"
+    "packages/*",
+    "yezhi-cli"
   ],
   "version": "independent",
   "npmClient": "yarn",
@@ -11,7 +12,8 @@
       "message": "chore(release): publish %s",
       "ignore": [
         "yezhi-example-*",
-        "docs-workspace"
+        "docs",
+        "yezhi-cli"
       ]
     }
   },
