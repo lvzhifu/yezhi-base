@@ -1,6 +1,17 @@
 {
   "packages": [
+    "docs",
+    "examples/*",
     "packages/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "yezhi-example-vuepc",
+        "docs-workspace"
+      ]
+    }
+  }
 }
