@@ -1,6 +1,13 @@
 {
   "name": "@yeezhi/cli",
   "version": "0.0.1",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "./bin/cli.js",
+  "license": "MIT",
+  "scripts": {
+    "ts": "node ./bin/cli.js"
+  },
+  "dependencies": {
+    "commander": "^5.1.0",
+    "inquirer": "^7.1.0"
+  }
 }
