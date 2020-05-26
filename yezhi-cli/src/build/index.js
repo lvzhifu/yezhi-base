@@ -5,6 +5,7 @@ function install(program) {
     .option('-t, --test <type>', 'Run time')
     .action((cmd) => {
       console.log('进入打包服务')
+      console.log('测试订阅提交')
     })
 }
 
