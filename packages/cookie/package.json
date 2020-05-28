@@ -1,0 +1,9 @@
+{
+  "name": "@yeezhi/cookie",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "arale-cookie": "^1.1.0"
+  }
+}

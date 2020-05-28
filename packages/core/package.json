@@ -6,6 +6,7 @@
   "author": "lvzhifuyy@163.com",
   "license": "MIT",
   "dependencies": {
+    "@yeezhi/cookie": "^0.0.1",
     "@yeezhi/http": "^0.0.14"
   }
 }
