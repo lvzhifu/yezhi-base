@@ -3,7 +3,8 @@
     "docs",
     "examples/*",
     "packages/*",
-    "yezhi-cli"
+    "yezhi-cli",
+    "blocks/*"
   ],
   "version": "independent",
   "npmClient": "yarn",
