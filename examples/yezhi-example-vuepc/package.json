@@ -3,7 +3,13 @@
   "version": "0.0.13",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "yeezhi serve --env dev"
+  },
   "dependencies": {
-    "@yeezhi/core": "^0.0.14"
+    "@yeezhi/core": "^0.0.15"
+  },
+  "devDependencies": {
+    "@yeezhi/cli": "^0.0.4-beta.0"
   }
 }

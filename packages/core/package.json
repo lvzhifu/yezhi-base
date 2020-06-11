@@ -8,6 +8,9 @@
   "dependencies": {
     "@yeezhi/cookie": "^0.0.2",
     "@yeezhi/help": "^0.0.1",
-    "@yeezhi/http": "^0.0.14"
+    "@yeezhi/http": "^0.0.14",
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.2",
+    "vuex": "^3.4.0"
   }
 }

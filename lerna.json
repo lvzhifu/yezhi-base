@@ -3,7 +3,6 @@
     "docs",
     "examples/*",
     "packages/*",
-    "yezhi-cli",
     "blocks/*"
   ],
   "version": "independent",

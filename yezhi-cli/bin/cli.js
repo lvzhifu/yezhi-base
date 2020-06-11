@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const program = require('commander') // 命令行参数获取
 const chalk = require('chalk') // 字体变色chalk
 const createInstall = require('../src/create') // 创建指令添加
@@ -6,11 +7,11 @@ const buildInstall = require('../src/build') // 打包服务指令添加
 const testInstall = require('../src/test') // 单元测试服务指令添加
 const addInstall = require('../src/add') // 区块添加服务指令添加
 const server = require('../')
-console.log(process.argv)
-console.log(process.execPath)
-console.log(process.cwd())
-console.log(__filename)
-console.log(__dirname)
+// console.log(process.argv)
+// console.log(process.execPath)
+// console.log(process.cwd())
+// console.log(__filename)
+// console.log(__dirname)
 // 获取当前版本信息
 program
   .version(require('../package.json').version)
@@ -35,9 +36,9 @@ addInstall(program)
 // 帮助信息整理
 program.on('--help', function(){
   console.log(chalk.yellow('  Examples:'))
-  console.log(chalk.green('   $ yezhi create test-app'))
-  console.log(chalk.green('   $ yezhi server --open'))
-  console.log(chalk.green('   $ yezhi test'))
+  console.log(chalk.green('   $ yeezhi create test-app'))
+  console.log(chalk.green('   $ yeezhi server --open'))
+  console.log(chalk.green('   $ yeezhi test'))
 })
 
 program.parse(process.argv)

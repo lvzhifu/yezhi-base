@@ -6,7 +6,7 @@
   "author": "lvzhifu <lvzhifuyy@163.com>",
   "license": "MIT",
   "scripts": {
-    "test": "node ./test.js"
+    "test": "node ./ocrtst.js"
   },
   "dependencies": {
     "lerna": "^2.5.1"
