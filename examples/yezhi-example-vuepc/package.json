@@ -7,7 +7,7 @@
     "start": "yeezhi serve --env dev"
   },
   "dependencies": {
-    "@yeezhi/core": "^0.0.15"
+    "@yeezhi/core": "^0.0.15-beta.0"
   },
   "devDependencies": {
     "@yeezhi/cli": "^0.0.4-beta.0"

@@ -1,4 +1,5 @@
-// import Vue from 'vue' // 基础vue框架
+import Vue from 'vue' // 基础vue框架
+console.log(Vue)
 // 测试引入http工具并使用
 import httpHelp from "@yeezhi/http"
 console.log(httpHelp)
