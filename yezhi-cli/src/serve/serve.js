@@ -127,7 +127,8 @@ config.plugin('staicCopy').use(CopyWebpackPlugin, [{
 
 // 全局环境默认对象
 config.plugin('DefinePlugin').use(DefinePlugin, [{
-  'process.env.RUN_ENV': '\"' + process.env.RUN_ENV + '\"'
+  'process.env.RUN_ENV': '\"' + process.env.RUN_ENV + '\"',
+  'process.env.PWD': '\"' + basPath + '\"'
 }])
 
 // 删除编译多余控制台信息
