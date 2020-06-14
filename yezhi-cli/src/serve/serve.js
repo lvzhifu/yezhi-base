@@ -45,7 +45,11 @@ config.resolve.alias.set('@config', path.join(basPath, './src/config'))
 
 // ES6+ 解析 babel
 config.module.rule('bablets').test(/\.js$/)
-  .use('babel').loader('babel-loader').end()
+  .use('babel').loader('babel-loader')
+    .options({
+      presets: ['@babel/preset-env'],
+      plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import"]
+    }).end()
 
 // 样式编码css_loade
 // config.module.rule('cssloade').test(/\.css$/)

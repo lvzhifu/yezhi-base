@@ -52,18 +52,12 @@ export default function initAxios(Http) {
    * put 提交
    */
   Http.prototype.put = function (url, params = {}, config = {}) {
-    // const opts = {...this.options.requestConfig, ...config}
-    // this.initServer()
-    // return this.$fetch.patch(getUrl(url, opts.isApiHost, opts.baseUrl), params, opts)
-
     const opts = {...this.options.requestConfig, ...config}
-    // const nowurl = getUrl(url, opts.isApiHost, opts.baseUrl)
     const paramsArry = []
     for (const item in params) {
       paramsArry.push(`${item}=${params[item]}`)
     }
     const nowurl = `${getUrl(url, opts.isApiHost, opts.baseUrl)}?1=1&${paramsArry.join('&')}`
-    // TODO：qs 树胶
     return this.$fetch.put(nowurl, params, opts)
   }
   /**
