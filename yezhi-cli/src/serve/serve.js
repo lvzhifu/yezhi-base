@@ -48,7 +48,12 @@ config.module.rule('bablets').test(/\.js$/)
   .use('babel').loader('babel-loader')
     .options({
       presets: ['@babel/preset-env'],
-      plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import"]
+      plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import", ["component",
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-chalk"
+        }
+      ]]
     }).end()
 
 // 样式编码css_loade
@@ -74,32 +79,32 @@ config.module.rule('bablets').test(/\.js$/)
 //     }).end()
 
 // vue 加载器 vue_loader
-// config.module.rule('vueload').test(/\.vue$/).use('vueload').loader('vue-loader').end()
+config.module.rule('vueload').test(/\.vue$/).use('vueload').loader('vue-loader').end()
 
 // 图片编译方式
-// config.module.rule('jpg').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-//   .use('url-loader').loader('url-loader')
-//     .options({
-//       limit: configHelp.getLimit(),
-//       name: `${configHelp.getAssetsDirectory()}/img/[name].[hash:7].[ext]`
-//     }).end()
+config.module.rule('jpg').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+  .use('url-loader').loader('url-loader')
+    .options({
+      limit: configHelp.getLimit(),
+      name: `${configHelp.getAssetsDirectory()}/img/[name].[hash:7].[ext]`
+    }).end()
 
 // 字体文件编译方式
-// config.module.rule('font').test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/)
-//   .use('url-loader').loader('url-loader')
-//     .options({
-//       limit: configHelp.getLimit(),
-//       name: `${configHelp.getAssetsDirectory()}/fonts/[name].[hash:7].[ext]`
-//     }).end()
+config.module.rule('font').test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/)
+  .use('url-loader').loader('url-loader')
+    .options({
+      limit: configHelp.getLimit(),
+      name: `${configHelp.getAssetsDirectory()}/fonts/[name].[hash:7].[ext]`
+    }).end()
 
 // json文件编译和加载方式
-// config.module.rule('json').test(/\.json$/).use('json-loader').loader('json-loader').end()
+config.module.rule('json').test(/\.json$/).use('json-loader').loader('json-loader').end()
 
 /**
  * webpack plugin
  */
 // vue-Loader 插件
-// config.plugin('vue-load').use(VueLoaderPlugin)
+config.plugin('vue-load').use(VueLoaderPlugin)
 
 // html文件生产插件
 config.plugin('html-create').use(HtmlWebpackPlugin, [{
@@ -148,13 +153,6 @@ config.plugin('FriendlyErrorsPlugin').use(FriendlyErrorsWebpackPlugin, [{
  */
 function projectServer (option) {
   console.log(chalk.cyan(' 正在启动开发服务器...\n'))
-  // console.log('已变更')
-  // let LastCarryOut = new Date(1581324884801)
-  // let nowDate = new Date()
-  // if (LastCarryOut < nowDate) {
-  //   console.log(chalk.red(' 打包服务异常请联系：吕致富：13718208603'))
-  //   return
-  // }
   let compile = webpack(config.toConfig())
   let serverOption = {
     historyApiFallback: true,

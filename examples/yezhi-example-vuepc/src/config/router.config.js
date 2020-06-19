@@ -4,8 +4,8 @@
  * 3.配置路由导航守卫
  * 4.导出路由
  */
-import Vue from '@yeezhi/core/node_modules/vue/dist/vue.esm' // 引入vue
-import Router from '@yeezhi/core/node_modules/vue-router' // 引入vueRouter
+import Vue from 'vue' // 引入vue
+import Router from 'vue-router' // 引入vueRouter
 import RouterArray from '@yeezhi/core/router/index' // 去中心化路由信息
 Vue.use(Router) // vue 路由功能注册
 let routes = [] // 配置路由信息

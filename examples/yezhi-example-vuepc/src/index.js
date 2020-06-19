@@ -1,5 +1,5 @@
 
-import Vue from '@yeezhi/core/node_modules/vue/dist/vue.esm'
+import Vue from 'vue'
 console.log(Vue)
 
 import router from '@config/router.config' // 路由信息

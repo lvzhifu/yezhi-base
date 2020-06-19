@@ -1,0 +1,11 @@
+{
+  "name": "@yeezhi/pcmaterials",
+  "version": "0.0.1-beta.0",
+  "description": "pc end materials",
+  "main": "index.js",
+  "author": "lvzhifuyy@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "element-ui": "^2.13.2"
+  }
+}
