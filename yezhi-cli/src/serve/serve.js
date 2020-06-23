@@ -48,7 +48,8 @@ config.module.rule('bablets').test(/\.js$/)
   .use('babel').loader('babel-loader')
     .options({
       presets: ['@babel/preset-env'],
-      plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import", ["component",
+      // "transform-vue-jsx"
+      plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import", "transform-vue-jsx",["component",
         {
           "libraryName": "element-ui",
           "styleLibraryName": "theme-chalk"
@@ -57,13 +58,13 @@ config.module.rule('bablets').test(/\.js$/)
     }).end()
 
 // 样式编码css_loade
-// config.module.rule('cssloade').test(/\.css$/)
-//   .use('style').loader('style-loader').end()
-//   .use('css').loader('css-loader').end()
-//   .use('postcss').loader('postcss-loader')
-//     .options({
-//       plugins: [require('autoprefixer')({ overrideBrowserslist: configHelp.getBrowser()}), require('postcss-px2rem')({remUnit: configHelp.getRemUnit()})] // https://github.com/browserslist/browserslist 详细配置
-//     }).end()
+config.module.rule('cssloade').test(/\.css$/)
+  .use('style').loader('style-loader').end()
+  .use('css').loader('css-loader').end()
+  .use('postcss').loader('postcss-loader')
+  .options({
+    plugins: [require('autoprefixer')({ overrideBrowserslist: configHelp.getBrowser()})] // https://github.com/browserslist/browserslist 详细配置
+  }).end()
 
 // 样式编码 less_load
 // config.module.rule('lessload').test(/\.less$/)

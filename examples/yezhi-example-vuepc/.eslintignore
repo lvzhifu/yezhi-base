@@ -1,0 +1,7 @@
+node_modules/**
+build/**
+config/*
+src/views/login/src/user.agre.vue
+src/views/login/src/privacy.agre.vue
+static/**
+tests/*

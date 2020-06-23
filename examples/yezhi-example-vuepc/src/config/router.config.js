@@ -7,11 +7,12 @@
 import Vue from 'vue' // 引入vue
 import Router from 'vue-router' // 引入vueRouter
 import RouterArray from '@yeezhi/core/router/index' // 去中心化路由信息
+import Layout from '@/layout/layout.vue'
 Vue.use(Router) // vue 路由功能注册
 let routes = [] // 配置路由信息
 const layoutRouter = {
   path: '/',
-  component: {template: '<div><p>我是框架页信息</p><div><router-view></router-view></div></div>'},
+  component: Layout,
   children: []
 } // 框架页模版路由配置
 // 加载根路由
