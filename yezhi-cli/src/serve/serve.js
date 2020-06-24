@@ -33,14 +33,14 @@ config.resolve.alias.set('@config', path.join(basPath, './src/config'))
  */
 
  // 代码检查 eslint-loader
-// config.module.rule('eslint').test(/\.(js|vue)$/)
-//   .enforce('pre')
-//   .include.add(path.resolve(basPath, './src')).end()
-//   .exclude.add(/node_modules/).end()
-//   .use('eslint').loader('eslint-loader')
-//     .options({
-//       formatter: require('eslint-friendly-formatter')
-//     })
+config.module.rule('eslint').test(/\.(js|vue)$/)
+  .enforce('pre')
+  .include.add(path.resolve(basPath, './src')).end()
+  .exclude.add(/node_modules/).end()
+  .use('eslint').loader('eslint-loader')
+    .options({
+      formatter: require('eslint-friendly-formatter')
+    })
 
 
 // ES6+ 解析 babel
@@ -66,18 +66,17 @@ config.module.rule('cssloade').test(/\.css$/)
     plugins: [require('autoprefixer')({ overrideBrowserslist: configHelp.getBrowser()})] // https://github.com/browserslist/browserslist 详细配置
   }).end()
 
-// 样式编码 less_load
-// config.module.rule('lessload').test(/\.less$/)
-//   .use('style').loader('style-loader').end()
-//   .use('css').loader('css-loader').end()
-//   .use('postcss').loader('postcss-loader')
-//     .options({
-//       plugins: [require('autoprefixer')({ overrideBrowserslist: configHelp.getBrowser()}), require('postcss-px2rem')({remUnit: configHelp.getRemUnit()})]
-//     }).end()
-//   .use('less').loader('less-loader')
-//     .options({
-//       sourceMap: true
-//     }).end()
+config.module.rule('scssload').test(/\.scss$/)
+  .use('style').loader('style-loader').end()
+  .use('css').loader('css-loader').end()
+  .use('postcss').loader('postcss-loader')
+    .options({
+      plugins: [require('autoprefixer')({ overrideBrowserslist: configHelp.getBrowser()})]
+    }).end()
+  .use('less').loader('sass-loader')
+    .options({
+      sourceMap: true
+    }).end()
 
 // vue 加载器 vue_loader
 config.module.rule('vueload').test(/\.vue$/).use('vueload').loader('vue-loader').end()

@@ -1,12 +1,12 @@
 
 import Vue from 'vue'
-console.log(Vue)
 
-import router from '@config/router.config' // 路由信息
+import router from '@config/router.config'
+console.log(Vue) // 路由信息
 console.log(router)
 const app = new Vue({
   // i18n,
-  router,
+  router
   // store
 }).$mount('#app')
 export default app

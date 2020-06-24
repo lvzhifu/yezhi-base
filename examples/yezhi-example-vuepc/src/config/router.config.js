@@ -37,10 +37,9 @@ const router = new Router({
   routes
 })
 
-
 // TODO: 此处配置路由的守卫导航
 router.beforeEach(async (to, form, next) => {
-  const { meta, fullPath } = to
+  // const { meta, fullPath } = to
   next()
 })
 
