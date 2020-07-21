@@ -7,7 +7,7 @@
 import Vue from 'vue' // 引入vue
 import Router from 'vue-router' // 引入vueRouter
 import RouterArray from '@yeezhi/core/router/index' // 去中心化路由信息
-import Layout from '@/layout/layout.vue'
+import Layout from '@/layout/index.js'
 Vue.use(Router) // vue 路由功能注册
 let routes = [] // 配置路由信息
 const layoutRouter = {

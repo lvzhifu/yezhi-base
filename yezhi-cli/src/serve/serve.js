@@ -60,7 +60,7 @@ config.module.rule('bablets').test(/\.js$/)
 // 样式编码css_loade
 config.module.rule('cssloade').test(/\.css$/)
   .use('style').loader('style-loader').end()
-  .use('css').loader('css-loader').end()
+  .use('css').loader('css-loader').options({ sourceMap: true }).end()
   .use('postcss').loader('postcss-loader')
   .options({
     plugins: [require('autoprefixer')({ overrideBrowserslist: configHelp.getBrowser()})] // https://github.com/browserslist/browserslist 详细配置
@@ -68,15 +68,18 @@ config.module.rule('cssloade').test(/\.css$/)
 
 config.module.rule('scssload').test(/\.scss$/)
   .use('style').loader('style-loader').end()
-  .use('css').loader('css-loader').end()
+  .use('css').loader('css-loader').options({ sourceMap: true }).end()
   .use('postcss').loader('postcss-loader')
     .options({
       plugins: [require('autoprefixer')({ overrideBrowserslist: configHelp.getBrowser()})]
     }).end()
-  .use('less').loader('sass-loader')
+  .use('scss').loader('sass-loader').options({ sourceMap: true }).end()
+  .use('resscss').loader('sass-resources-loader')
     .options({
-      sourceMap: true
+      sourceMap: true,
+      resources: [path.resolve(process.cwd(),'./src/style/variables.scss')] // 后期修改为配置文件读取多文件
     }).end()
+
 
 // vue 加载器 vue_loader
 config.module.rule('vueload').test(/\.vue$/).use('vueload').loader('vue-loader').end()
@@ -86,6 +89,7 @@ config.module.rule('jpg').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
   .use('url-loader').loader('url-loader')
     .options({
       limit: configHelp.getLimit(),
+      esModule: false,
       name: `${configHelp.getAssetsDirectory()}/img/[name].[hash:7].[ext]`
     }).end()
 

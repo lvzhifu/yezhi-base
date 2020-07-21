@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'vpcexam-icon';  /* project id 1856145 */
+  src: url('//at.alicdn.com/t/font_1856145_c70qb574v07.eot');
+  src: url('//at.alicdn.com/t/font_1856145_c70qb574v07.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1856145_c70qb574v07.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1856145_c70qb574v07.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1856145_c70qb574v07.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1856145_c70qb574v07.svg#temvpFont') format('svg');
+}
+%yz-icon {
+  font-family: 'vpcexam-icon' !important;
+  font-size: 16px;
+  font-style:normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="yz-icon-"], [class*=" yz-icon-"] {
+  @extend %yz-icon;
+}
+.yz-icon {
+  @extend %yz-icon;
+  // 首页信息
+  &-home:before { content: "\e6a5"; }
+  // 框架页收缩
+  &-menushrink:before { content: "\e603"; }
+}

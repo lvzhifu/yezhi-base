@@ -11,6 +11,6 @@
     "@yeezhi/pcmaterials": "^0.0.1-bate.1"
   },
   "devDependencies": {
-    "@yeezhi/cli": "^0.0.4-beta.8"
+    "@yeezhi/cli": "^0.0.4-beta.10"
   }
 }

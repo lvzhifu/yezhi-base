@@ -1,9 +1,11 @@
 
 import Vue from 'vue'
-
 import router from '@config/router.config'
-console.log(Vue) // 路由信息
-console.log(router)
+import ElementUI from 'element-ui'
+// css 部分
+import './style/icon.scss'
+import './style/rest.scss'
+Vue.use(ElementUI)
 const app = new Vue({
   // i18n,
   router
