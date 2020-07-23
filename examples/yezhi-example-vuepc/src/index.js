@@ -1,10 +1,12 @@
 
 import Vue from 'vue'
 import router from '@config/router.config'
+import yzcore from '@yeezhi/core'
 import ElementUI from 'element-ui'
 // css 部分
 import './style/icon.scss'
 import './style/rest.scss'
+Vue.use(yzcore)
 Vue.use(ElementUI)
 const app = new Vue({
   // i18n,

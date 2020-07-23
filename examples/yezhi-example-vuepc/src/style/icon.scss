@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'vpcexam-icon';  /* project id 1856145 */
-  src: url('//at.alicdn.com/t/font_1856145_c70qb574v07.eot');
-  src: url('//at.alicdn.com/t/font_1856145_c70qb574v07.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1856145_c70qb574v07.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1856145_c70qb574v07.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1856145_c70qb574v07.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1856145_c70qb574v07.svg#temvpFont') format('svg');
+  src: url('//at.alicdn.com/t/font_1856145_bejvib2j91.eot');
+  src: url('//at.alicdn.com/t/font_1856145_bejvib2j91.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1856145_bejvib2j91.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1856145_bejvib2j91.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1856145_bejvib2j91.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1856145_bejvib2j91.svg#temvpFont') format('svg');
 }
 %yz-icon {
   font-family: 'vpcexam-icon' !important;
@@ -28,4 +28,10 @@
   &-home:before { content: "\e6a5"; }
   // 框架页收缩
   &-menushrink:before { content: "\e603"; }
+  // 顶部搜索
+  &-headsearch:before { content: "\e653"; }
+  // 对话
+  &-talk:before { content: "\e659"; }
+  // 提醒
+  &-remind:before { content: "\e65a"; }
 }

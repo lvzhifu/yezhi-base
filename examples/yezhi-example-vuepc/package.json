@@ -7,8 +7,8 @@
     "start": "yeezhi serve --env dev"
   },
   "dependencies": {
-    "@yeezhi/core": "^0.0.15-bate.3",
-    "@yeezhi/pcmaterials": "^0.0.1-bate.1"
+    "@yeezhi/core": "^0.0.15-bate.4",
+    "@yeezhi/pcmaterials": "^0.0.1-bate.2"
   },
   "devDependencies": {
     "@yeezhi/cli": "^0.0.4-beta.10"
