@@ -7,7 +7,7 @@
     "start": "yeezhi serve --env dev"
   },
   "dependencies": {
-    "@yeezhi/core": "^0.0.15-bate.4",
+    "@yeezhi/core": "^0.0.15-bate.5",
     "@yeezhi/pcmaterials": "^0.0.1-bate.2"
   },
   "devDependencies": {

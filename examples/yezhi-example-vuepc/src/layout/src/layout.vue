@@ -2,18 +2,18 @@
   <div class="yzbs">
     <yzhead/>
     <yzmenu/>
-    <yzcontent/>
+    <!-- <yzcontent/> -->
   </div>
 </template>
 <script>
 import yzhead from './components/head.vue'
 import yzmenu from './components/menu.vue'
-import yzcontent from './components/content.vue'
+// import yzcontent from './components/content.vue'
 export default {
   components: {
     yzhead,
-    yzmenu,
-    yzcontent
+    yzmenu
+    // yzcontent
   }
 }
 </script>
