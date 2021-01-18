@@ -12,6 +12,8 @@
   </el-menu>
 </template>
 <script>
+import MenuArray from '@/config/menu.config.js'
+console.log(MenuArray)
 export default {
   // 组件
   components: {},
