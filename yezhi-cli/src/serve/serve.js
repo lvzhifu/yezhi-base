@@ -101,8 +101,9 @@ config.module.rule('font').test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/)
       name: `${configHelp.getAssetsDirectory()}/fonts/[name].[hash:7].[ext]`
     }).end()
 
+// TODO: 拿配置文件报错暂时未解决
 // json文件编译和加载方式
-config.module.rule('json').test(/\.json$/).use('json-loader').loader('json-loader').end()
+// config.module.rule('json').test(/\.json$/).use('json-loader').loader('json-loader').end()
 
 /**
  * webpack plugin

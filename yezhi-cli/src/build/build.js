@@ -108,7 +108,8 @@ config.module.rule('font').test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/)
       name: `${configHelp.getAssetsDirectory()}/fonts/[name].[hash:7].[ext]`
     }).end()
 
-config.module.rule('json').test(/\.json$/).use('json-loader').loader('json-loader').end()
+// TODO: 拿配置文件报错暂时未解决
+// config.module.rule('json').test(/\.json$/).use('json-loader').loader('json-loader').end()
 
 /**
  * webpack plugin
@@ -136,8 +137,8 @@ config.plugin('staicCopy').use(CopyWebpackPlugin, [{
 }])
 
 config.plugin('DefinePlugin').use(DefinePlugin, [{
-  'process.env.RUN_ENV': '\"' + process.env.RUN_ENV + '\"'
-  // 'process.env.PWD': '\"' + basPath + '\"'
+  'process.env.RUN_ENV': '\"' + process.env.RUN_ENV + '\"',
+  'process.env.PWD': '\"' + basPath + '\"'
 }])
 
 config.plugin('html-create').use(HtmlWebpackPlugin, [{
