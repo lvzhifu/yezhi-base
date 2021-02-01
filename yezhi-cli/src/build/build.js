@@ -138,7 +138,7 @@ config.plugin('staicCopy').use(CopyWebpackPlugin, [{
 
 config.plugin('DefinePlugin').use(DefinePlugin, [{
   'process.env.RUN_ENV': '\"' + process.env.RUN_ENV + '\"',
-  'process.env.PWD': '\"' + basPath + '\"'
+  'process.env.PWD': '\"' + process.cwd().replace(/\\/g,'/') + '\"'
 }])
 
 config.plugin('html-create').use(HtmlWebpackPlugin, [{
