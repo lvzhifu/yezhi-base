@@ -15,6 +15,7 @@ const optimizeCss = require('optimize-css-assets-webpack-plugin') // css 压缩
 const DefinePlugin = webpack.DefinePlugin
 const basPath = process.cwd() // 基础路径
 const configHelp = new ConfigHelp() // 获取配置项信息
+// console.log(webpack.optimize.CommonsChunkPlugin)
 
 /**
  * webpack Config 配置
@@ -56,10 +57,17 @@ config.module.rule('bablets').test(/\.js$/)
     ]]
   }).end()
 
+/**
+ * 1. 判断是否启用相对性路径
+ */
+const cssExtraOption = {}
+if (configHelp.getPublicPath() === './') {
+  cssExtraOption.publicPath = '../../'
+}
 // TODO: 由于当前没有试用移动端待需要添加配置移动端自适应方案
 // require('postcss-px2rem')({remUnit: configHelp.getRemUnit()})
 config.module.rule('cssloade').test(/\.css$/)
-  .use('style').loader(MiniCssExtractPlugin.loader).end()
+  .use('style').loader(MiniCssExtractPlugin.loader).options(cssExtraOption).end()
   .use('css').loader('css-loader').end()
   .use('postcss').loader('postcss-loader')
     .options({
@@ -68,7 +76,7 @@ config.module.rule('cssloade').test(/\.css$/)
 
 // TODO: 目前仅支持SCSS 处理，后期处理为配置 less SCSS
 config.module.rule('scssload').test(/\.scss$/)
-  .use('style').loader(MiniCssExtractPlugin.loader).end()
+  .use('style').loader(MiniCssExtractPlugin.loader).options(cssExtraOption).end()
   .use('css').loader('css-loader').options({ sourceMap: true }).end()
   .use('postcss').loader('postcss-loader')
     .options({
@@ -110,6 +118,26 @@ config.module.rule('font').test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/)
 
 // TODO: 拿配置文件报错暂时未解决
 // config.module.rule('json').test(/\.json$/).use('json-loader').loader('json-loader').end()
+/**
+ * optimization
+ */
+config.optimization.splitChunks({
+  chunks: 'all',
+  cacheGroups: {
+    libs: {
+      name: 'chunk-libs',
+      test: /[\\/]node_modules[\\/]/,
+      priority: 10,
+      chunks: 'initial' // 只打包初始时依赖的第三方
+    },
+    elementUI: {
+      name: 'chunk-elementUI', // 单独将 elementUI 拆包
+      priority: 20, // 权重要大于 libs 和 app 不然会被打包进 libs 或者 app
+      test: /[\\/]node_modules[\\/]element-ui[\\/]/
+    }
+  }
+})
+
 
 /**
  * webpack plugin
