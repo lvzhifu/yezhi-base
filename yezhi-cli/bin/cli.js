@@ -6,6 +6,7 @@ const serverInstall = require('../src/serve') // 开发服务指令添加
 const buildInstall = require('../src/build') // 打包服务指令添加
 const testInstall = require('../src/test') // 单元测试服务指令添加
 const addInstall = require('../src/add') // 区块添加服务指令添加
+const configInstall = require('../src/cofset') // 配置信息查看及添加服务
 const server = require('../')
 // console.log(process.argv)
 // console.log(process.execPath)
@@ -31,6 +32,9 @@ testInstall(program)
 
 // 区块添加指令插件配置
 addInstall(program)
+
+// 配置信息指令插件配置
+configInstall(program)
 
 
 // 帮助信息整理
