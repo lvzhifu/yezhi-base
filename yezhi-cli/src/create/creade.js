@@ -17,7 +17,7 @@ async function getProjects() {
     headers: {
       'PRIVATE-TOKEN': configObj.priveKey
     },
-    url: `${configObj.storAddre}/api/v3/projects`
+    url: `${configObj.storAddre}/api/v4/projects`
   })
   const optArry = res.data.map(item => {
     return item.path_with_namespace

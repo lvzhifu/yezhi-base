@@ -1,3 +1,4 @@
+
 module.exports = {
   remUnit: 37.5, // 设计图的总宽度是以750px为标准，则填写75；如果是375px，则填写37.5；以此类推
   // eslit 错误展示
@@ -35,5 +36,6 @@ module.exports = {
         '/qt': ''
       }
     }
-  }
+  },
+  version: 'v1.2.3'
 }

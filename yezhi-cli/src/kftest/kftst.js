@@ -184,8 +184,6 @@ config.plugin('staicCopy').use(CopyWebpackPlugin, [{
     }
   ]
 }])
-
-
 // 获取所有模块的版本信息
 const vaersionary = []
 var modeldir = fs.readdirSync(`${basPath}/@modular`)
@@ -217,7 +215,6 @@ config.plugin('FriendlyErrorsPlugin').use(FriendlyErrorsWebpackPlugin, [{
  *
  */
 function projectServer (option) {
-  console.log(chalk.cyan(' 正在启动开发服务器...\n'))
   let compile = webpack(config.toConfig())
   let serverOption = {
     historyApiFallback: true,

@@ -15,11 +15,12 @@ function configDeploy(action, option) {
 }
 
 function getConfig(option) {
-  const isSet = option.storType || option.priveKey || option.storAddre
+  const isSet = option.storType || option.priveKey || option.storAddre || option.pmTool
   const outArry = []
   outArry.push(`仓库类型:${configObj.storType}`)
   outArry.push(`仓库私钥匙:${configObj.priveKey}`)
   outArry.push(`仓库地址:${configObj.storAddre}`)
+  outArry.push(`包管理工具:${configObj.pmTool}`)
   outArry.forEach((item, idx) => {
     if (isSet) {
       if(idx === 0 && option.storType) {
@@ -29,6 +30,9 @@ function getConfig(option) {
         console.log(chalk.bgBlue(item))
       }
       if(idx === 2 && option.storAddre) {
+        console.log(chalk.bgBlue(item))
+      }
+      if(idx === 3 && option.pmTool) {
         console.log(chalk.bgBlue(item))
       }
     } else {
@@ -49,6 +53,9 @@ function setConfig(option) {
   }
   if (option.storAddre) {
     configObj.storAddre = option.storAddre
+  }
+  if (option.pmTool) {
+    configObj.pmTool = option.pmTool
   }
   fs.writeFile(configFile, JSON.stringify(configObj), err => {
   } )

@@ -1,3 +1,4 @@
+import '@/style/jjj.scss'
 export default {
   tabs: [
     {

@@ -51,6 +51,22 @@ class configHelp{
   getLimit() {
     return baseconfig.limit || 5000
   }
+  // 获取覆盖性配置信息
+  getAliasArry() {
+    return baseconfig.alias || []
+  }
+  // 获取组件库类型
+  getAseType() {
+    return baseconfig.aseType || ''
+  }
+  // 获取覆盖内容信息
+  getAlias() {
+    return baseconfig.alias || []
+  }
+  // 获取版本信息
+  getVersion() {
+    return baseconfig.version || []
+  }
 }
 
 module.exports = configHelp

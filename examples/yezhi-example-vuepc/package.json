@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yeezhi serve --env dev"
+    "start": "yeezhi serve --env dev",
+    "build": "yeezhi build"
   },
   "dependencies": {
     "@yeezhi/core": "^0.0.15-bate.5",
-    "@yeezhi/pcmaterials": "^0.0.1-bate.2"
+    "@yeezhi/pcmaterials": "^0.0.1-bate.2",
+    "yezhi-example-oneprj": "^1.0.0"
   },
   "devDependencies": {
     "@yeezhi/cli": "^0.0.4-beta.10"
