@@ -1,14 +1,14 @@
 {
   "name": "@yeezhi/core",
-  "version": "0.0.15-bate.5",
+  "version": "0.0.0-bate.6",
   "description": "框架基本类库全引用",
   "main": "./index.js",
   "author": "lvzhifuyy@163.com",
   "license": "MIT",
   "dependencies": {
-    "@yeezhi/cookie": "^0.0.0-bate.5",
-    "@yeezhi/help": "^0.0.1-bate.5",
-    "@yeezhi/http": "^0.0.1-bate.5",
+    "@yeezhi/cookie": "^0.0.0-bate.6",
+    "@yeezhi/help": "^0.0.0-bate.6",
+    "@yeezhi/http": "^0.0.0-bate.6",
     "vue": "^2.6.11",
     "vue-router": "^3.3.2",
     "vuex": "^3.4.0"
