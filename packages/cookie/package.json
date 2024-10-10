@@ -1,6 +1,6 @@
 {
   "name": "@yeezhi/cookie",
-  "version": "0.0.0-bate.6",
+  "version": "0.0.0-bate.7",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
