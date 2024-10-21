@@ -205,8 +205,10 @@ config.plugin('staicCopy').use(CopyWebpackPlugin, [{
 const vaersionary = []
 var modeldir = fs.readdirSync(`${basPath}/@modular`)
 for (let i = 0; i < modeldir.length; i++) {
-  const impore = require(`${basPath}/@modular/${modeldir[i]}/yezi.js`)
-  vaersionary.push(`${modeldir[i]}: %c${impore.version}`)
+  if (modeldir[i] !== '.DS_Store') {
+    const impore = require(`${basPath}/@modular/${modeldir[i]}/yezi.js`)
+    vaersionary.push(`${modeldir[i]}: %c${impore.version}`)
+  }
 }
 vaersionary.push(`${path.basename(basPath)}:%c${require(`${basPath}/yezi.js`).version}`)
 // 全局环境默认对象
@@ -230,8 +232,10 @@ config.plugin('html-create').use(HtmlWebpackPlugin, [{
 const modelImporAry = []
 var modeldir = fs.readdirSync(`${basPath}/@modular`)
 for (let i = 0; i < modeldir.length; i++) {
-  const impore = require(`${basPath}/@modular/${modeldir[i]}/static/imporpart.js`)
-  modelImporAry.push(impore)
+  if (modeldir[i] !== '.DS_Store') {
+    const impore = require(`${basPath}/@modular/${modeldir[i]}/static/imporpart.js`)
+    modelImporAry.push(impore)
+  }
 }
 modelImporAry.push(require(`${basPath}/static/imporpart.js`))
 const lastObj = modelImporAry.reduce(function(total, current) {
