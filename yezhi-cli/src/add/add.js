@@ -1,10 +1,11 @@
 const chalk = require('chalk') // 字体变颜色
 const ora = require('ora') // node中的进度条参数
 const axios = require('axios')
-const configObj = require('../../yconf.json')
+const basPath = process.cwd()
+// const configObj = require('../../yconf.json')
+const configObj = require(path.join(basPath, './yconf.json'))
 const inquirer = require('inquirer')
 const path = require('path') // 路径处理
-const basPath = process.cwd() // 基础路径
 const fs = require('fs');
 const unzipper = require('unzipper')
 const { spawn } = require('child_process')
