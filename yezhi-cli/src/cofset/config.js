@@ -1,8 +1,10 @@
 const chalk = require('chalk') // 字体变颜色
 const fs = require('fs')
 const path = require('path') // 路径处理
-const configObj = require('../../yconf.json')
-const configFile = path.resolve(__dirname, '../../yconf.json')
+// const configObj = require('../../yconf.json')
+const basPath = process.cwd()
+const configObj = require(path.join(basPath, './yconf.json'))
+const configFile = path.resolve(path.join(basPath, './yconf.json'))
 /**
  * 对外执行函数
  */
