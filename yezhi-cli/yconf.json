@@ -1,1 +1,1 @@
-{"priveKey":"gitlab","storType":"gitlab","storAddre":"http://192.168.1.40:3000","pmTool":"yarn"}
+{"priveKey":"gitlab","storType":"gitlab","storAddre":"http://192.168.1.40:3000","pmTool":"yarn", "registry": "http://58.22.61.222:14873/"}

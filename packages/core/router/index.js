@@ -28,10 +28,15 @@ Vue.use(Router) // vue 路由功能注册
 const LayoutCom = require(`${process.env.RUN_BASE === 'base' ? process.env.PWD : `${process.env.PWD}/@modular/${process.env.RUN_BASE}`}/src/layout/index.js`).default
 let routes = [] // 配置路由信息
 const layoutRouter = {
+  name: 'basstruc',
   path: '/',
   component: LayoutCom,
   children: []
 } // 框架页模版路由配置
+routes.push({
+  path: '*',
+  redirect: '/'
+})
 // 加载根路由
 const globalRouters = localeRouter('global')
 if (!!globalRouters && globalRouters.length !== 0) {

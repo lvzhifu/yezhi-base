@@ -13,7 +13,6 @@ import * as cookie from '@yeezhi/cookie'
 import help from '@yeezhi/help'
 import bus from './bus/index'
 const versionArry = process.env.version.split(',')
-debugger
 versionArry.forEach(itm => {
   console.log(itm,'color:red')
 })

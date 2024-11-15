@@ -1,6 +1,6 @@
 {
   "name": "@yeezhi/cli",
-  "version": "0.0.0-bate.9",
+  "version": "0.0.0-bate.10",
   "main": "./bin/cli.js",
   "bin": {
     "yeezhi": "./bin/cli.js"

@@ -57,7 +57,7 @@ export default function initAxios(Http) {
     for (const item in params) {
       paramsArry.push(`${item}=${params[item]}`)
     }
-    const nowurl = `${getUrl(url, opts.isApiHost, opts.baseUrl)}?1=1&${paramsArry.join('&')}`
+    const nowurl = `${getUrl(url, opts.isApiHost, opts.baseUrl)}`
     return this.$fetch.put(nowurl, params, opts)
   }
   /**

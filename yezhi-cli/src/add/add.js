@@ -3,9 +3,9 @@ const ora = require('ora') // node中的进度条参数
 const axios = require('axios')
 const basPath = process.cwd()
 // const configObj = require('../../yconf.json')
-const configObj = require(path.join(basPath, './yconf.json'))
 const inquirer = require('inquirer')
 const path = require('path') // 路径处理
+const configObj = require(path.join(basPath, './yconf.json'))
 const fs = require('fs');
 const unzipper = require('unzipper')
 const { spawn } = require('child_process')
@@ -44,7 +44,8 @@ async function getModula(modename, cmd) {
   console.log(modeConfigObj.treeParty)
   // 添加第三方依赖
   modeConfigObj.treeParty.forEach((item) => {
-    const commandArgs = configObj.pmTool === 'yarn' ? ['add', item] : ['install', item]
+    // const commandArgs = configObj.pmTool === 'yarn' ? ['add', item, '--registry', configObj.registry] : ['install', item]
+    const commandArgs = createExStr(item)
     addDependencies(configObj.pmTool, commandArgs)
 })
 
@@ -64,6 +65,23 @@ async function getModula(modename, cmd) {
 }
 // 获取模块信息
 function getUnit(commandNmae, cmd) {
+
+}
+// 创建依赖添加目录
+function createExStr(item) {
+  const exArray = []
+  if (configObj.pmTool === 'yarn') {
+    exArray.push('add')
+    exArray.push(item)
+  } else {
+    exArray.push('install')
+    exArray.push(item)
+  }
+  if (configObj.registry) {
+    exArray.push('--registry')
+    exArray.push(configObj.registry)
+  }
+  return exArray
 
 }
 
