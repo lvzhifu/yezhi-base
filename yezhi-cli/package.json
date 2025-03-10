@@ -1,6 +1,6 @@
 {
   "name": "@yeezhi/cli",
-  "version": "0.0.0-bate.10",
+  "version": "0.0.0-bate.11",
   "main": "./bin/cli.js",
   "bin": {
     "yeezhi": "./bin/cli.js"
@@ -57,6 +57,7 @@
     "sass-loader": "^8.0.2",
     "sass-resources-loader": "^2.0.3",
     "style-loader": "^1.2.1",
+    "svg-sprite-loader": "3.8.0",
     "unzipper": "^0.12.3",
     "url-loader": "^4.1.0",
     "vue-loader": "^15.9.2",

@@ -103,9 +103,14 @@ config.module.rule('scssload').test(/\.scss$/)
 
 // vue 加载器 vue_loader
 config.module.rule('vueload').test(/\.vue$/).use('vueload').loader('vue-loader').end()
-
+// svg loader
+config.module.rule('svg').test(/\.(svg)(\?.*)?$/)
+  .use('svg-sprite-loader').loader('svg-sprite-loader')
+    .options({
+      symbolId: 'icon-[name]'
+    }).end()
 // 图片编译方式
-config.module.rule('jpg').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+config.module.rule('jpg').test(/\.(png|jpe?g|gif)(\?.*)?$/)
   .use('url-loader').loader('url-loader')
     .options({
       limit: configHelp.getLimit(),

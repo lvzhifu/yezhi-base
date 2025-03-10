@@ -119,8 +119,13 @@ config.module.rule('scssload').test(/\.scss$/)
 //       sourceMap: true
 //     }).end()
 config.module.rule('vueload').test(/\.vue$/).use('vueload').loader('vue-loader').end()
-
-config.module.rule('jpg').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+// svg loader
+config.module.rule('svg').test(/\.(svg)(\?.*)?$/)
+  .use('svg-sprite-loader').loader('svg-sprite-loader')
+    .options({
+      symbolId: 'icon-[name]'
+    }).end()
+config.module.rule('jpg').test(/\.(png|jpe?g|gif)(\?.*)?$/)
   .use('url-loader').loader('url-loader')
     .options({
       limit: configHelp.getLimit(),
