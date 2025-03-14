@@ -27,7 +27,7 @@ async function getModula(modename, cmd) {
     headers: {
       'PRIVATE-TOKEN': configObj.priveKey
     },
-    url: `${configObj.storAddre}/api/v4/projects`
+    url: `${configObj.storAddre}/api/v4/projects?owned=true&bigDataFE&per_page=100`
   })
   const searchProjects = projectsres.data.filter((item) => {
     return item.name === modename
