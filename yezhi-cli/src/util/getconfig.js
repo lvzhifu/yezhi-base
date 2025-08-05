@@ -1,6 +1,8 @@
+const fs = require('fs');
 const path = require('path') // 路径处理
 const basPath = process.cwd()
 const baseconfig = require(path.join(basPath, './yezi.js'))
+const fse = require('fs-extra')
 
 class configHelp{
   constructor(){
@@ -66,6 +68,45 @@ class configHelp{
   // 获取版本信息
   getVersion() {
     return baseconfig.version || []
+  }
+
+  // 静态文件处理
+  staticFileHandle() {
+    const modularDir = path.join(basPath, '@modular');
+    if (!fs.existsSync(modularDir)) {
+      console.warn('[!] @modular 目录不存在，跳过静态文件处理');
+      return;
+    }
+    var modeldir = fs.readdirSync(`${basPath}/@modular`)
+    for (let i = 0; i < modeldir.length; i++) {
+      if (modeldir[i] !== '.DS_Store') {
+        const impore = require(`${basPath}/@modular/${modeldir[i]}/yezi.js`)
+        if (impore.staticCopy && impore.staticCopy.length !== 0) {
+          fileCopy(impore.staticCopy, modeldir[i])
+        }
+      }
+    }
+  }
+}
+function fileCopy(staticCopyArray, modelDir) {
+  const srcBase = path.join(basPath, '@modular', `${modelDir}/static`);
+  const destBase = path.join(basPath, 'static');
+
+  for (const item of staticCopyArray) {
+    const srcPath = path.join(srcBase, item);
+    const destPath = path.join(destBase, item);
+    console.log(srcPath)
+    console.log(destPath)
+    try {
+      if (fs.existsSync(srcPath)) {
+        fse.copySync(srcPath, destPath, { overwrite: true });
+        console.log(`[✓] Copied: ${srcPath} → ${destPath}`);
+      } else {
+        console.warn(`[!] Skip: ${srcPath} not found`);
+      }
+    } catch (err) {
+      console.error(`[✗] Error copying ${srcPath}:`, err.message);
+    }
   }
 }
 

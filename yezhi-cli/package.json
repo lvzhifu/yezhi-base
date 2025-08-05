@@ -1,6 +1,6 @@
 {
   "name": "@yeezhi/cli",
-  "version": "0.0.0-bate.12",
+  "version": "0.0.0-bate.13",
   "main": "./bin/cli.js",
   "bin": {
     "yeezhi": "./bin/cli.js"
@@ -44,6 +44,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "10",
     "html-webpack-plugin": "^4.3.0",
     "inquirer": "^7.1.0",
     "json-loader": "^0.5.7",

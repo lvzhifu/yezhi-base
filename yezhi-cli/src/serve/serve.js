@@ -161,11 +161,30 @@ const data = `window.funInfo=${JSON.stringify(lastObj)}`
 
 fs.writeFileSync(`${basPath}/static/impor.js`, data, 'utf8')
 
+console.log('进来了吗')
+// 静态文件处理
+configHelp.staticFileHandle()
+
+// 静态文件引用处理
+const scritpArry = []
+var modeldir = fs.readdirSync(`${basPath}/@modular`)
+for (let i = 0; i < modeldir.length; i++) {
+  if (modeldir[i] !== '.DS_Store') {
+    const impore = require(`${basPath}/@modular/${modeldir[i]}/yezi.js`)
+    if (impore.staticScript && impore.staticScript.length !== 0) {
+      impore.staticScript.forEach(itm => {
+        scritpArry.push(`<script src="./static/${itm}"></script>`)
+      })
+    }
+  }
+}
+scritpArry.push('<script src="./static/impor.js"></script>')
+
 config.plugin('html-create-script').use(class {
   apply(compiler) {
     compiler.hooks.compilation.tap('HtmlWebpackPluginHooks', (compilation) => {
       HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync('AddScriptPlugin', (data, cb) => {
-          data.html = data.html.replace('</head>','<script src="./static/impor.js"></script></head>')
+          data.html = data.html.replace('</head>',`${scritpArry.join('\n')}\n</head>`)
           cb(null, data)
       })
 
